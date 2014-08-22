@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.opentok.com/v2/partner/123456/archive?offset=3
+    uri: https://api.opentok.com/v2/partner/123456/archive?count=3&offset=3
     body:
       encoding: US-ASCII
       string: ''
@@ -10,7 +10,7 @@ http_interactions:
       X-Tb-Partner-Auth:
       - 123456:1234567890abcdef1234567890abcdef1234567890
       User-Agent:
-      - OpenTok-Ruby-SDK/<%= version %>
+      - OpenTok-Ruby-SDK/2.2.3.alpha.1
   response:
     status:
       code: 200
@@ -19,53 +19,36 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 19 Mar 2014 00:44:22 GMT
+      - Fri, 22 Aug 2014 04:16:12 GMT
       Content-Type:
       - application/json
-      Transfer-Encoding:
-      - chunked
       Connection:
       - keep-alive
+      Content-Length:
+      - '1814'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains
     body:
-      encoding: UTF-8
-      string: |-
-        {
-          "count" : 6,
-          "items" : [ {
-            "createdAt" : 1395183243000,
-            "duration" : 544,
-            "id" : "30b3ebf1-ba36-4f5b-8def-6f70d9986fe9",
-            "name" : "",
-            "partnerId" : 123456,
-            "reason" : "",
-            "sessionId" : "SESSIONID",
-            "size" : 78499758,
-            "status" : "available",
-            "url" : "http://tokbox.com.archive2.s3.amazonaws.com/123456%2F30b3ebf1-ba36-4f5b-8def-6f70d9986fe9%2Farchive.mp4?Expires=1395188695&AWSAccessKeyId=AKIAI6LQCPIXYVWCQV6Q&Signature=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-          }, {
-            "createdAt" : 1394396753000,
-            "duration" : 24,
-            "id" : "b8f64de1-e218-4091-9544-4cbf369fc238",
-            "name" : "showtime again",
-            "partnerId" : 123456,
-            "reason" : "",
-            "sessionId" : "SESSIONID",
-            "size" : 2227849,
-            "status" : "available",
-            "url" : "http://tokbox.com.archive2.s3.amazonaws.com/123456%2Fb8f64de1-e218-4091-9544-4cbf369fc238%2Farchive.mp4?Expires=1395188695&AWSAccessKeyId=AKIAI6LQCPIXYVWCQV6Q&Signature=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-          }, {
-            "createdAt" : 1394321113000,
-            "duration" : 1294,
-            "id" : "832641bf-5dbf-41a1-ad94-fea213e59a92",
-            "name" : "showtime",
-            "partnerId" : 123456,
-            "reason" : "",
-            "sessionId" : "SESSIONID",
-            "size" : 42165242,
-            "status" : "available",
-            "url" : "http://tokbox.com.archive2.s3.amazonaws.com/123456%2F832641bf-5dbf-41a1-ad94-fea213e59a92%2Farchive.mp4?Expires=1395188695&AWSAccessKeyId=AKIAI6LQCPIXYVWCQV6Q&Signature=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-          } ]
-        }
+      encoding: US-ASCII
+      string: ! "{\n  \"count\" : 891,\n  \"items\" : [ {\n    \"id\" : \"85a491ab-b7a2-4ec3-9ae5-348dc707e23c\",\n
+        \   \"status\" : \"available\",\n    \"name\" : null,\n    \"statusMessage\"
+        : \"\",\n    \"sessionId\" : \"2_MX4xMDB-flR1ZSBOb3YgMTkgMTE6MDk6NTggUFNUIDIwMTN-MC4zNzQxNzIxNX4\",\n
+        \   \"partnerId\" : 100,\n    \"createdAt\" : 1408488414000,\n    \"size\"
+        : 1496384,\n    \"duration\" : 7,\n    \"mode\" : \"automatic\",\n    \"updatedAt\"
+        : 1408489340000,\n    \"url\" : \"http://tokbox.com.archive2.s3.amazonaws.com/100%2F85a491ab-b7a2-4ec3-9ae5-348dc707e23c%2Farchive.mp4?Expires=1408681572&AWSAccessKeyId=AKIAI6LQCPIXYVWCQV6Q&Signature=b4zZet%2B5Xx2LeuHH0OLllKdmejk%3D\"\n
+        \ }, {\n    \"id\" : \"69c3f0c3-fca4-4dde-9087-b65f61a54f85\",\n    \"status\"
+        : \"available\",\n    \"name\" : null,\n    \"statusMessage\" : \"\",\n    \"sessionId\"
+        : \"2_MX4xMDB-flR1ZSBOb3YgMTkgMTE6MDk6NTggUFNUIDIwMTN-MC4zNzQxNzIxNX4\",\n
+        \   \"partnerId\" : 100,\n    \"createdAt\" : 1408488303000,\n    \"size\"
+        : 5251406,\n    \"duration\" : 21,\n    \"mode\" : \"automatic\",\n    \"updatedAt\"
+        : 1408489354000,\n    \"url\" : \"http://tokbox.com.archive2.s3.amazonaws.com/100%2F69c3f0c3-fca4-4dde-9087-b65f61a54f85%2Farchive.mp4?Expires=1408681572&AWSAccessKeyId=AKIAI6LQCPIXYVWCQV6Q&Signature=c%2BDyBcGHRbBr3AiaDGWHDTVZ7lQ%3D\"\n
+        \ }, {\n    \"id\" : \"1edf544a-7238-4452-ab0f-8d034d98a61f\",\n    \"status\"
+        : \"available\",\n    \"name\" : null,\n    \"statusMessage\" : \"\",\n    \"sessionId\"
+        : \"1_MX4xMDB-MTI3LjAuMC4xflR1ZSBBdWcgMTkgMTU6MjA6MDkgUERUIDIwMTR-MC4xMTc0MjM1MzR-fg\",\n
+        \   \"partnerId\" : 100,\n    \"createdAt\" : 1408486819000,\n    \"size\"
+        : 68679,\n    \"duration\" : 60,\n    \"mode\" : \"automatic\",\n    \"updatedAt\"
+        : 1408486882000,\n    \"url\" : \"http://tokbox.com.archive2.s3.amazonaws.com/100%2F1edf544a-7238-4452-ab0f-8d034d98a61f%2Farchive.mp4?Expires=1408681572&AWSAccessKeyId=AKIAI6LQCPIXYVWCQV6Q&Signature=EbxXqMRRZygLkc2Kd07C3p%2FQGqM%3D\"\n
+        \ } ]\n}"
     http_version: 
-  recorded_at: Wed, 19 Mar 2014 00:44:22 GMT
+  recorded_at: Fri, 22 Aug 2014 04:16:12 GMT
 recorded_with: VCR 2.8.0

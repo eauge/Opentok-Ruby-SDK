@@ -12,3 +12,19 @@ RSpec.configure do |c|
   # in RSpec 3 this will no longer be necessary.
   c.treat_symbols_as_metadata_keys_with_true_values = true
 end
+
+
+def enable_network
+  if network_attached
+    VCR.eject_cassette
+    WebMock.allow_net_connect!
+    VCR.turn_off!
+  end
+end
+
+def disable_network
+  if network_attached
+    VCR.turn_on!
+    WebMock.disable_net_connect!
+  end
+end

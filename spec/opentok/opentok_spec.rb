@@ -4,17 +4,27 @@ require "opentok/version"
 require "spec_helper"
 require "shared/opentok_generates_tokens"
 
+if ENV["NETWORK"] != nil
+  if !ENV["API_KEY"] || !ENV["API_SECRET"]
+    raise 'When using network mode, API_KEY and API_SECRET must be provided'
+  end
+end
+
 describe OpenTok::OpenTok do
 
   let(:opentok) { OpenTok::OpenTok.new api_key, api_secret }
+  let(:network_attached) { ENV["NETWORK"] != nil }
+  
   subject { opentok }
 
   context "when initialized properly" do
 
-    let(:api_key) { "123456" }
-    let(:api_secret) { "1234567890abcdef1234567890abcdef1234567890" }
-
-    let(:default_api_url) { "https://api.opentok.com" }
+    let(:fake_api_key) {"123456"}
+    let(:fake_api_secret) {"1234567890abcdef1234567890abcdef1234567890"}
+    let(:default_api_url) {"https://api.opentok.com"}
+    let(:api_key) { ENV["API_KEY"] || fake_api_key }
+    let(:api_secret) { ENV["API_SECRET"] || fake_api_secret }
+    let(:api_url) { ENV["API_URL"] || default_api_url }
 
     it { should be_an_instance_of OpenTok::OpenTok  }
 
@@ -32,13 +42,23 @@ describe OpenTok::OpenTok do
 
       let(:location) { '12.34.56.78' }
 
+      before(:each) do
+        enable_network
+      end
+
+      after(:each) do
+        disable_network
+      end
+
       it "creates default sessions", :vcr => { :erb => { :version => OpenTok::VERSION } } do
-        session = opentok.create_session
-        expect(session).to be_an_instance_of OpenTok::Session
-        # TODO: do we need to be any more specific about what a valid session_id looks like?
-        expect(session.session_id).to be_an_instance_of String
-        expect(session.media_mode).to eq :relayed
-        expect(session.location).to eq nil
+        
+          session = opentok.create_session
+          expect(session).to be_an_instance_of OpenTok::Session
+          # TODO: do we need to be any more specific about what a valid session_id looks like?
+          expect(session.session_id).to be_an_instance_of String
+          expect(session.media_mode).to eq :relayed
+          expect(session.location).to eq nil
+        VCR.turn_on!
       end
 
       it "creates relayed media sessions", :vcr => { :erb => { :version => OpenTok::VERSION } } do

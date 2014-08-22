@@ -10,7 +10,7 @@ http_interactions:
       X-Tb-Partner-Auth:
       - 123456:1234567890abcdef1234567890abcdef1234567890
       User-Agent:
-      - OpenTok-Ruby-SDK/<%= version %>
+      - OpenTok-Ruby-SDK/2.2.3.alpha.1
   response:
     status:
       code: 200
@@ -19,42 +19,30 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 19 Mar 2014 00:54:18 GMT
+      - Fri, 22 Aug 2014 04:16:12 GMT
       Content-Type:
       - application/json
-      Transfer-Encoding:
-      - chunked
       Connection:
       - keep-alive
+      Content-Length:
+      - '1215'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains
     body:
-      encoding: UTF-8
-      string: |-
-        {
-          "count" : 6,
-          "items" : [ {
-            "createdAt" : 1395187930000,
-            "duration" : 22,
-            "id" : "ef546c5a-4fd7-4e59-ab3d-f1cfb4148d1d",
-            "name" : "",
-            "partnerId" : 123456,
-            "reason" : "",
-            "sessionId" : "SESSIONID",
-            "size" : 2909274,
-            "status" : "available",
-            "url" : "http://tokbox.com.archive2.s3.amazonaws.com/123456%2Fef546c5a-4fd7-4e59-ab3d-f1cfb4148d1d%2Farchive.mp4?Expires=1395188695&AWSAccessKeyId=AKIAI6LQCPIXYVWCQV6Q&Signature=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-          }, {
-            "createdAt" : 1395187910000,
-            "duration" : 14,
-            "id" : "5350f06f-0166-402e-bc27-09ba54948512",
-            "name" : "",
-            "partnerId" : 123456,
-            "reason" : "",
-            "sessionId" : "SESSIONID",
-            "size" : 1952651,
-            "status" : "available",
-            "url" : "http://tokbox.com.archive2.s3.amazonaws.com/123456%2F5350f06f-0166-402e-bc27-09ba54948512%2Farchive.mp4?Expires=1395188695&AWSAccessKeyId=AKIAI6LQCPIXYVWCQV6Q&Signature=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-          } ]
-        }
+      encoding: US-ASCII
+      string: ! "{\n  \"count\" : 891,\n  \"items\" : [ {\n    \"id\" : \"73337867-2aec-4c68-96fb-b50838600dc5\",\n
+        \   \"status\" : \"available\",\n    \"name\" : \"Go-SDK\",\n    \"statusMessage\"
+        : \"\",\n    \"sessionId\" : \"1_MX4xMDB-flRodSBBdWcgMjEgMTQ6NTk6MDggUERUIDIwMTR-MC42NjQ4ODYzNn5-\",\n
+        \   \"partnerId\" : 100,\n    \"createdAt\" : 1408658353000,\n    \"size\"
+        : 61762,\n    \"duration\" : 6,\n    \"mode\" : \"automatic\",\n    \"updatedAt\"
+        : 1408658362000,\n    \"url\" : \"http://tokbox.com.archive2.s3.amazonaws.com/100%2F73337867-2aec-4c68-96fb-b50838600dc5%2Farchive.mp4?Expires=1408681572&AWSAccessKeyId=AKIAI6LQCPIXYVWCQV6Q&Signature=FTxYrCPc%2BxrlL0uy2uA2yDUpZhI%3D\"\n
+        \ }, {\n    \"id\" : \"eacffef3-af4d-4411-81c8-f913f5f3c906\",\n    \"status\"
+        : \"available\",\n    \"name\" : \"Go-SDK\",\n    \"statusMessage\" : \"\",\n
+        \   \"sessionId\" : \"2_MX4xMDB-flRodSBBdWcgMjEgMTQ6NTY6MzIgUERUIDIwMTR-MC43NjU3MDY5Nn5-\",\n
+        \   \"partnerId\" : 100,\n    \"createdAt\" : 1408658197000,\n    \"size\"
+        : 36632,\n    \"duration\" : 4,\n    \"mode\" : \"automatic\",\n    \"updatedAt\"
+        : 1408658202000,\n    \"url\" : \"http://tokbox.com.archive2.s3.amazonaws.com/100%2Feacffef3-af4d-4411-81c8-f913f5f3c906%2Farchive.mp4?Expires=1408681572&AWSAccessKeyId=AKIAI6LQCPIXYVWCQV6Q&Signature=nUyQVzOTvd9bwjTS8LkIeuH6WiU%3D\"\n
+        \ } ]\n}"
     http_version: 
-  recorded_at: Wed, 19 Mar 2014 00:54:18 GMT
+  recorded_at: Fri, 22 Aug 2014 04:16:12 GMT
 recorded_with: VCR 2.8.0
